@@ -2,7 +2,7 @@
 
 include ('getImages.php');
 
-echo "ok <br />";
+echo "<h1>ok</h1> <br />";
 
 $images = getImages(null,'cover.jpg');
 
