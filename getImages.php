@@ -6,6 +6,7 @@
 * Optionaly you can provide name of cover image (ie. 'cover.jpg') which will be saved as first item in the array
 *
 * by Gabriel Garus
+* *****
 *
 */
 
