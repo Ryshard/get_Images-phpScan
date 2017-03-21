@@ -42,7 +42,7 @@ $coverro = is_null($coverImg) ? ' ': $coverImg;
 
 //check if its a directory - if path is correct
 if(is_dir($thePath))
-        {
+{
             
         // Scan directory
         $dire = scandir($thePath);
@@ -51,36 +51,42 @@ if(is_dir($thePath))
 
 
         // Find Cover Image and add it as first item in the Array
-        foreach ($dire as $key => $file) {
+        foreach ($dire as $key => $file) 
+        {
 
-            if(is_file($thePath.$file)){ //check if item is a file
-                if ($file == $coverro){
-                    $listimages[] = $file;
-                                    }
-                                    }
-                                        } // end foreach
-
-        // Add other files into array
-        foreach ($dire as $key => $file) {
-            if(is_file($thePath.$file)){
-             if ($file != $coverro){ // don't add cover
-                    $ex_file = explode('.', $file);
-                    $extension = $ex_file[1];
-                    if (in_array($extension, $files)){
+            if(is_file($thePath.$file))
+            { //check if item is a file
+                if ($file == $coverro)
+                {
                     $listimages[] = $file;
                 }
+            }
+        } // end foreach
+
+        // Add other files into array
+        foreach ($dire as $key => $file) 
+        {
+            if(is_file($thePath.$file))
+            {
+                if ($file != $coverro)
+                { // don't add cover
+                    $ex_file = explode('.', $file);
+                    $extension = $ex_file[1];
+                    if (in_array($extension, $files))
+                    {
+                        $listimages[] = $file;
+                    }
+                }
              }
-         }
         }// end foreach
 
-        }
-
-else { // If path is not directory
-echo $thePath;
-echo ' <br /> is NOT Directorry';
-die();  
 }
-
+else
+{ // If path is not directory
+        echo $thePath;
+        echo ' <br /> is NOT Directorry';
+        die();  
+}
 
 return $listimages;
 
